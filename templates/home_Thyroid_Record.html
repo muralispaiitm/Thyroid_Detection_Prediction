@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <style> div.scroll { overflow: auto; } </style>
+</head>
+
+<body>
+<div class="scroll">
+    <! Back Button --------------------------------------- >
+    <button type="button" class="round-button"><a style="text-decoration:none"; href="/" ><</a></button>
+    <script> function goBack() { window.history.back();} </script>
+
+    <! Title Name  --------------------------------------- >
+    <div class="container"><center><h1> Thyroid Prediction </h1></center></div>
+
+    <! Asking user to enter student details  --------------------------------------- >
+    <div class="container">
+        <form action="{{ url_for('predict_Thyroid_Record')}}" method="POST">
+            <center>
+                <! Table_01 Starts  --------------------------------------- >
+                <table>
+                    <! 1st row ----------- >
+                    <tr>
+                        <th align="right">age</th>
+                        <td><input type="float" required="required" name="age"         id="age"        placeholder="ex: 41, 23"></td>
+                        <td>  </td>
+
+                        <td align="center"> <input type="number" name="sex" id="sex" placeholder="F-0, M-1"/>
+                        <th align="left"> sex </th>
+                    </tr>
+                    <! 2nd row ----------- >
+                    <tr>
+                        <th align="right">TSH</th>
+                        <td><input type="float" required="required" name="TSH"     id="TSH"    placeholder="ex: 4.1, 0.98"></td>
+                        <td></td>
+
+                        <td><input type="number" required="required" name="on_thyroxine"           id="on_thyroxine"          placeholder="f-0, t-1"></td>
+                        <th align="left">on_thyroxine</th>
+                    </tr>
+                    <! 3rd row ----------- >
+                    <tr>
+                        <th align="right">T4U</th>
+                        <td><input type="float" required="required" name="T4U"       id="T4U"      placeholder="ex: 1.14, 0.91"></td>
+                        <td></td>
+
+                        <td align="center"> <input type="number" name="query_hypothyroid" id="query_hypothyroid" placeholder="f-0, t-1"/>
+                        <th align="left"> query_hypothyroid </th>
+                    </tr>
+                    <! 4th row ----------- >
+                    <tr>
+                        <th align="right">FTI</th>
+                        <td><input type="float" required="required" name="FTI"      id="FTI"      placeholder="ex: 109, 120"></td>
+                        <td></td>
+
+                        <td align="center"> <input type="number" name="query_hyperthyroid"  id="query_hyperthyroid" placeholder="f-0, t-1"/>
+                        <th align="left"> query_hyperthyroid </th>
+                    </tr>
+                    <! 5th row ----------- >
+                    <tr>
+                        <th align="right">T3</th>
+                        <td><input type="float" required="required" name="T3"        id="T3"       placeholder="ex: 2, 1.9"></td>
+                        <td></td>
+
+                        <td align="center"> <input type="number" name="thyroid_surgery" id="thyroid_surgery" placeholder="f-0, t-1"/>
+                        <th align="left"> thyroid_surgery </th>
+                    </tr>
+                    <! 6th row ----------- >
+                    <tr>
+                        <th align="right">TT4</th>
+                        <td><input type="float" required="required" name="TT4"        id="TT4"       placeholder="ex: 102, 109"></td>
+                        <td></td>
+
+                        <td align="center"> <input type="number" name="tumor" id="tumor" placeholder="f-0, t-1"/>
+                        <th align="left"> tumor </th>
+                    </tr>
+
+                    <! Button  --------------------------------------- >
+                    <tr align="centre">
+                        <th></th><td></td>
+                        <td> <button type="submit" class="btn"> PREDICT </button></td>
+                    </tr>
+                </table>
+            </center>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <style> div.scroll { overflow: auto; } </style>
+</head>
+
+<body>
+<div class="scroll">
+    <! Back Button --------------------------------------- >
+    <button type="button" class="round-button"><a style="text-decoration:none"; href="/" ><</a></a></button>
+    <script> function goBack() { window.history.back();} </script>
+
+    <! Title Name  --------------------------------------- >
+    <div class="container"><center><h1> Thyroid Prediction </h1></center></div>
+
+    <! Asking user to enter student details  --------------------------------------- >
+    <div class="container">
+        <form action="{{ url_for('predict_Thyroid_File')}}" method="POST" enctype="multipart/form-data">
+            <center>
+                <div class="btn-2">
+                    <! Table Starts ----------------- >
+                    <table>
+                        <! 1st row ------------------ >
+                        <tr>
+                            <th align="left"> Upload File </th>
+                            <th align="center"> : </th>
+                            <td colspan="2"> <input type="file" name="in_file" id="in_file" required="required" class="btn-2"></td>
+                        </tr>
+                    </table>
+                    <! Button  --------------------------------------- >
+                    <button type="submit" class="btn"> PREDICT </button>
+                </div>
+            </center>
+        </form>
+    </div>
+</div>
+</body>
+</html>

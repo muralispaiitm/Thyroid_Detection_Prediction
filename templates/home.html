@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+<br>
+<div class="container"><center><h1> Thyroid Prediction </h1></center></div>
+<br><br><br>
+ <div class="container">
+     <center>
+        <div class="box">
+            <h4 align="center"> Select the type </h4>
+            <form action="{{url_for('home_type')}}" method="POST">
+               <select name="input_type" id="input_type" required="required" >
+                   <option hidden="hidden" > Choose Input Type </option>
+                   <option value="Training_Model"> Training Model </option>
+                   <option value="Predicting_Record"> Predicting Record </option>
+                   <option value="Predicting_File"> Predicting File </option>
+               </select>
+               <button type="submit" class="btn"> Go > </button>
+            </form>
+        </div>
+     </center>
+ </div>
+</body>
+<br>
+</html>
